@@ -2,3 +2,7 @@ __pycache__
 .vscode
 build
 doc
+yolo2onnx_venv
+*.tmp
+*.cfg
+*.weights
