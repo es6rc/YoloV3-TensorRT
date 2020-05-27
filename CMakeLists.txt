@@ -9,9 +9,11 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
 endif()
 #set the dependcy libs
-option(TensorRT-ROOT "if build the excutable bins" /opt/TensorRT-6.0.1.5)
+option(TensorRT-LIB "if build the excutable bins" /opt/TensorRT-6.0.1.5)
 option(OpenCV-ROOT "if build the excutable bins" /home/opencv-4.0.0/build/out)
 option(CUDA-ROOT "path to the cuda install" /usr/local/cuda)
+option(TensorRT-ROOT "if build the excutable bins" /opt/TensorRT-6.0.1.5)
+
 include(cmake/ProcessDependency.cmake)
 
 

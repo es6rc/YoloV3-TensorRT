@@ -1,10 +1,10 @@
-#!/usr/bin/env python2
+# !/usr/bin/env python2
 
 from __future__ import print_function
 from __future__ import print_function
 import numpy as np
 import ctypes
-ctypes.cdll.LoadLibrary('/opt/TensorRT-6.0.1.5/lib/libnvinfer_plugin.so')
+ctypes.cdll.LoadLibrary('/usr/lib/x86_64-linux-gnu/libnvinfer_plugin.so')
 import numpy as np
 import tensorrt as trt
 import pycuda.driver as cuda
@@ -20,7 +20,7 @@ import common
 
 TRT_LOGGER = trt.Logger()
 logger = trt.Logger(trt.Logger.INFO)
-ctypes.cdll.LoadLibrary('./libyoloPlugin.so')
+ctypes.cdll.LoadLibrary('./build/libyoloPlugin.so')
 
 
 def get_plugin_creator(plugin_name):
@@ -135,4 +135,4 @@ def get_engine(onnx_file_path, engine_file_path=""):
 
 
 
-get_engine("yolov3.onnx", "yolov3.trt")
+get_engine("/home/z/repos/YoloV3-TensorRT/doc/yolov3-416.onnx", "doc/yolov3.trt")

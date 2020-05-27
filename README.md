@@ -16,7 +16,8 @@ Feature:
 Build:
 
     1.mkdir build && cd build
-    2.cmake .. -DTensorRT-ROOT=/path/to/tensorrt/root -DCUDA-ROOT=path/to/cuda/root -DOpenCV-ROOT=/path/to/opencv/root
+    2. sudo update-alternatives --config gcc # change to 7
+    2.cmake .. -DTensorRT-ROOT=/usr/src/tensorrt -DCUDA-ROOT=/usr/local/cuda -DOpenCV-ROOT=/usr/local -DTensorRT-LIB=/usr/lib/x86_64-linux-gnu
     3.make -j8
     Note: I use opencv4.0.0, If you use opencv2.x or opencv3.x, please edit the ProcessDependency.cmake about the opencv lib config , beacuse may some so is not exsit in older opencv version, and opencv include config from: include_directories${OpenCV-ROOT}/include/opencv4) to include_directories(${OpenCV-ROOT}/include)
 Requirment:

@@ -296,6 +296,7 @@ public:
         if(access(engineFilePath.c_str(),0) == 0){
             EngineDeserialize();
         }else{
+            std::cout << "here" << std::endl;
             CreateNetwork();
             CreateEngineAndSerialize(buildinfo.maxWorkspaceSize, buildinfo.flag, buildinfo.maxBatch);
         }

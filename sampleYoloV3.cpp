@@ -7,7 +7,7 @@ int main()
     ModelInfo minfo;
     BuildInfo binfo;
     minfo.format = ModelFormat::kONNX;
-    minfo.onnxmodelfile = "/opt/TensorRT-6.0.1.5/samples/python/yolov3_onnx/yolov3.onnx";
+    minfo.onnxmodelfile = "/home/z/repos/YoloV3-TensorRT/yolov3-416.onnx";
     minfo.outputs;
 
     binfo.maxWorkspaceSize = 1024;
@@ -16,11 +16,11 @@ int main()
     binfo.safe = false;
     binfo.dlacore = -1;
     binfo.maxBatch = 1;
-    YoloTrtNet trtnet("/opt/onnx.trt",minfo, binfo);
+    YoloTrtNet trtnet("/home/z/repos/YoloV3-TensorRT/yolov3-416.trt",minfo, binfo);
     trtnet.GetEngine();
-
+    std::cout << "here" << std::endl;
     cv::VideoCapture cap;
-    cap.open("/home/dtt/Videos/daytime/v_1509084073705.avi");
+    cap.open("/home/z/Videos/sample.mp4");
     if(cap.isOpened()){
         while(true){
             cv::Mat img;
